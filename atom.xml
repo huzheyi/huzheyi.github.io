@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[huzheyi's blog]]></title>
+  <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://huzheyi.gq/"/>
+  <updated>2015-01-24T12:50:36.603Z</updated>
+  <id>http://huzheyi.gq/</id>
+  
+  <author>
+    <name><![CDATA[huzheyi]]></name>
+    <email><![CDATA[huzheyi@msn.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[First Post]]></title>
+    <link href="http://huzheyi.gq/2015/01/24/First-Post/"/>
+    <id>http://huzheyi.gq/2015/01/24/First-Post/</id>
+    <published>2015-01-23T16:39:30.000Z</published>
+    <updated>2015-01-24T10:52:37.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>Hello World !</strong><br><a id="more"></a><br>感谢伟大的Github Pages！</p>
+<p>感谢伟大的Hexo！</p>
+<p>感谢伟大的Pacman!</p>
+<p>在这里开始我的博客，记录点滴。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>Hello World !</strong><br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+</feed>
