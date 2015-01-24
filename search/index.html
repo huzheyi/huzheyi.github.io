@@ -1,21 +1,22 @@
 
- <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html >
 <head>
   <meta charset="UTF-8">
   
-    <title>First Post | huzheyi&#39;s blog</title>
+    <title>huzheyi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="huzheyi">
     
-    <meta name="description" content="Hello World !">
+    <meta name="description" content="layout: searchtitle: search">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="huzheyi" />
-    <meta name="twitter:title" content="First Post | huzheyi&#39;s blog" />
+    <meta name="twitter:title" content="huzheyi&#39;s blog" />
       
     
     
@@ -30,9 +31,9 @@
 
 </head>
 
-  <body>
-    <header>
-      <div>
+      <body>
+        <header>
+          <div>
 		
 			<div id="imglogo">
 				<a href="/"><img src="/img/logo.png" alt="huzheyi&#39;s blog" title="huzheyi&#39;s blog"/></a>
@@ -64,37 +65,29 @@
 			</nav>			
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/24/First-Post/" title="First Post" itemprop="url">First Post</a>
+      <a href="/search/index.html" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/109510142051195880000?rel=author" title="huzheyi" target="_blank" itemprop="author">huzheyi</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-01-23T16:39:30.000Z" itemprop="datePublished">Jan 24 2015</time>
-    Updated:<time datetime="2015-01-24T10:52:37.000Z" itemprop="dateModified">Jan 24 2015</time>
+    <time datetime="2015-01-24T11:16:58.000Z" itemprop="datePublished">Jan 24 2015</time>
+    Updated:<time datetime="2015-01-24T11:16:58.000Z" itemprop="dateModified">Jan 24 2015</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		
-		</div>
-		
-		<p><strong>Hello World !</strong><br><a id="more"></a><br>感谢伟大的Github Pages！</p>
-<p>感谢伟大的Hexo！</p>
-<p>感谢伟大的Pacman!</p>
-<p>在这里开始我的博客，记录点滴。</p>
+		<p>layout: search<br>title: search</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -136,29 +129,8 @@ huzheyi" charset="utf-8"></script>
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
-  
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -188,7 +160,7 @@ huzheyi" charset="utf-8"></script>
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+        <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -215,8 +187,6 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -233,38 +203,6 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
 });
 </script>
 
@@ -286,5 +224,6 @@ $(document).ready(function(){
 
 
 
-  </body>
-</html>
+      </body>
+     </html>
+     
