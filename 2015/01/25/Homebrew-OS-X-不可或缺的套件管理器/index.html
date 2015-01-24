@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>First Post | huzheyi&#39;s blog</title>
+    <title>Homebrew-OS X 不可或缺的套件管理器 | huzheyi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="huzheyi">
     
-    <meta name="description" content="Hello World !">
+    <meta name="description" content="时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——Homebrew(Githu">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="huzheyi" />
-    <meta name="twitter:title" content="First Post | huzheyi&#39;s blog" />
+    <meta name="twitter:title" content="Homebrew-OS X 不可或缺的套件管理器 | huzheyi&#39;s blog" />
       
     
     
@@ -72,15 +72,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/24/First-Post/" title="First Post" itemprop="url">First Post</a>
+      <a href="/2015/01/25/Homebrew-OS-X-不可或缺的套件管理器/" title="Homebrew-OS X 不可或缺的套件管理器" itemprop="url">Homebrew-OS X 不可或缺的套件管理器</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/109510142051195886912?rel=author" title="huzheyi" target="_blank" itemprop="author">huzheyi</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-01-23T16:39:30.000Z" itemprop="datePublished">1月 24 2015</time>
-    更新日期:<time datetime="2015-01-24T14:18:41.000Z" itemprop="dateModified">1月 24 2015</time>
+    <time datetime="2015-01-24T16:42:06.000Z" itemprop="datePublished">1月 25 2015</time>
+    更新日期:<time datetime="2015-01-24T17:30:35.000Z" itemprop="dateModified">1月 25 2015</time>
     
   </p>
 </header>
@@ -89,23 +89,87 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
 		</div>
 		
-		<p><strong>Hello World !</strong><br><a id="more"></a><br>感谢伟大的<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a> ！</p>
-<p>感谢伟大的<a href="http://hexo.io" target="_blank" rel="external">Hexo</a> ！</p>
-<p>感谢伟大的<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a> !</p>
-<p>在这里开始我的博客，记录点滴。</p>
+		<p>时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>(<a href="https://github.com/Homebrew/homebrew" target="_blank" rel="external">Github</a>)。</p>
+<hr>
+<h1 id="Homebrew的安装">Homebrew的安装</h1>
+<p>Homebrew的安装十分方便，仅需在终端窗口中输入一行命令：</p>
+<pre><code>ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre><h1 id="Homebrew的使用">Homebrew的使用</h1>
+<p>Homebrew的原则是“No Sudo”，即再也不需要Sudo来安装删除软件包了。下面是Homebrew的用法，十分简单(以wget为例)：</p>
+<ul>
+<li><p>查找软件包</p>
+<p>  <code>brew search wget</code></p>
+</li>
+<li><p>安装软件包</p>
+<p>  <code>brew install wget</code></p>
+</li>
+<li><p>列出已安装的软件包</p>
+<p>  <code>brew list</code></p>
+</li>
+<li><p>删除软件包</p>
+<p>  <code>brew remove wget</code></p>
+</li>
+<li><p>查看软件包信息</p>
+<p>  <code>brew info wget</code></p>
+</li>
+<li><p>列出软件包的依赖关系</p>
+<p>  <code>brew deps wget</code></p>
+</li>
+<li><p>列出过时的软件包</p>
+<p>  <code>brew outdated</code></p>
+</li>
+<li><p>更新过时的指定软件包</p>
+<p>  <code>brew upgrade wget</code></p>
+</li>
+<li><p>更新过时的全部软件包</p>
+<p>  <code>brew upgrade</code></p>
+</li>
+</ul>
+<h1 id="Homebrew的更新">Homebrew的更新</h1>
+<p>Homebrew的更新，同样十分方便：</p>
+<p><code>brew update</code></p>
+<h1 id="自定义软件包管理">自定义软件包管理</h1>
+<p>如果需要的软件包不能再Homebrew找到，同时又想通过Homebrew来方便的管理，那么久可以使用Homebrew来自定义软件包。</p>
+<ol>
+<li><p>找到软件源码地址</p>
+<p> <code>http://xxx.com/source-1.0.tgz</code></p>
+</li>
+<li><p>建立自己的formula</p>
+<p> <code>brew create http://xxx.com/source-1.0.tgz</code></p>
+<p> Homebrew自动建立的formula已包含<code>configure</code>和<code>make install</code>，一般不需要进行修改，退出编辑安装即可。</p>
+</li>
+</ol>
+<ol>
+<li><p>如果有需要编辑formula</p>
+<p> <code>brew edit source</code></p>
+</li>
+<li><p>安装自定义软件包</p>
+<p> <code>brew install souce</code></p>
+</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/包管理/">包管理</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/技术相关/">技术相关</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://huzheyi.gq/2015/01/24/First-Post/" data-title="First Post | huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
+  <div data-url="http://huzheyi.gq/2015/01/25/Homebrew-OS-X-不可或缺的套件管理器/" data-title="Homebrew-OS X 不可或缺的套件管理器 | huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
   </div>
 
 </div>
@@ -114,14 +178,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/25/Homebrew-OS-X-不可或缺的套件管理器/" title="Homebrew-OS X 不可或缺的套件管理器">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Homebrew-OS X 不可或缺的套件管理器</span>
+
+<div class="next">
+<a href="/2015/01/24/First-Post/"  title="First Post">
+ <strong>NEXT:</strong><br/> 
+ <span>First Post
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -135,7 +199,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
   </div>
 
 <div id="asidepart">
