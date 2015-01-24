@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-01-24T18:09:04.928Z</updated>
+  <updated>2015-01-24T18:13:08.104Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://huzheyi.gq/2015/01/25/Homebrew-OS-X-%E4%B8%8D%E5%8F%AF%E6%88%96%E7%BC%BA%E7%9A%84%E5%A5%97%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8/"/>
     <id>http://huzheyi.gq/2015/01/25/Homebrew-OS-X-不可或缺的套件管理器/</id>
     <published>2015-01-24T16:42:06.000Z</published>
-    <updated>2015-01-24T18:09:01.000Z</updated>
+    <updated>2015-01-24T18:13:01.000Z</updated>
     <content type="html"><![CDATA[<p>时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，<a id="more"></a>Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>(<a href="https://github.com/Homebrew/homebrew" target="_blank" rel="external">Github</a>)。</p>
 <hr>
 <h2 id="Homebrew的安装">Homebrew的安装</h2>
