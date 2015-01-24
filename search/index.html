@@ -1,22 +1,19 @@
 
-  
-    <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html >
 <head>
   <meta charset="UTF-8">
   
-    <title>huzheyi&#39;s blog</title>
+    <title>search | huzheyi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="huzheyi">
-    
-    <meta name="description" content="layout: searchtitle: search">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="huzheyi" />
-    <meta name="twitter:title" content="huzheyi&#39;s blog" />
+    <meta name="twitter:title" content="search | huzheyi&#39;s blog" />
       
     
     
@@ -31,9 +28,9 @@
 
 </head>
 
-      <body>
-        <header>
-          <div>
+    <body>
+      <header>
+        <div>
 		
 			<div id="imglogo">
 				<a href="/"><img src="/img/logo.png" alt="huzheyi&#39;s blog" title="huzheyi&#39;s blog"/></a>
@@ -64,102 +61,32 @@
 			</nav>			
 </div>
 
-        </header>
-        <div id="container">
-          <div id="main" class="page" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/search/index.html" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="https://plus.google.com/109510142051195880000?rel=author" title="huzheyi" target="_blank" itemprop="author">huzheyi</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2015-01-24T11:16:58.000Z" itemprop="datePublished">Jan 24 2015</time>
-    Updated:<time datetime="2015-01-24T11:16:58.000Z" itemprop="dateModified">Jan 24 2015</time>
-    
-  </p>
-</header>
-	<div class="article-content">
-		
-		
-		<p>layout: search<br>title: search</p>
-  
-	</div>
-		<footer class="article-footer clearfix">
-
-
-
-
-<div class="article-share" id="share">
-
-  
-<div class="jiathis_style">
-    <span class="jiathis_txt">分享到：</span>
-    <a class="jiathis_button_tsina">新浪微博</a>
-    <a class="jiathis_button_weixin">微信</a>
-    <a class="jiathis_button_twitter">Twitter</a>
-    <a class="jiathis_button_evernote">EverNote</a>
-    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+      </header>
+      <div id="container">
+        
+<div  id="main" class="page">
+  <div id='cse' style='width:100%;text-align:center'>正在加载搜索结果，请稍等。</div>
 </div>
-<script type="text/javascript" >
-    var jiathis_config={
-    data_track_clickback:true,
-    sm:"copy,renren,cqq",
-    pic:"",
-    summary:"",
-     ralateuid:{"tsina":"2098978053"},hideMore:false}
-    
-  </script> 
-<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
-huzheyi" charset="utf-8"></script>      
+<script src="http://www.google.com.hk/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+google.load('search', '1', {language : 'zh-CN',style: google.loader.themes.MINIMALIST});
+google.setOnLoadCallback(function(){
+  var customSearchControl = new google.search.CustomSearchControl('002038155708967751805:mlby-svk8og');
+  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  var options = new google.search.DrawOptions();
+  options.setAutoComplete(true);
+  customSearchControl.draw('cse', options);
+  var match = location.search.match(/q=([^&]*)(&|$)/);
+  if(match && match[1]){
+    var search = decodeURIComponent(match[1]); 
+    customSearchControl.execute(search);
+  }
+},true);
+</script>
 
 
-</div>
-</footer>   	       
-	</article>
-	
-	
-<section class="comment">
-	<div class="ds-thread"></div>
-</section>
-
-</div>  
-        </div>
-        <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<div class="social-font clearfix">
-		
-		<a href="http://weibo.com/2098978053" target="_blank" title="weibo"></a>
-		
-		
-		<a href="https://twitter.com/huzheyi" target="_blank" title="twitter"></a>
-		
-		
-		<a href="https://github.com/huzheyi" target="_blank" title="github"></a>
-		
-		
-		<a href="https://www.facebook.com/zheyi.hu" target="_blank" title="facebook"></a>
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
-		
-		<a href="http://huzheyi.gq" target="_blank" title="huzheyi">huzheyi</a>
-		
-		</p>
-</div>
-</footer>
-        <script src="/js/jquery-2.1.0.min.js"></script>
+      </div>
+      <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -207,18 +134,6 @@ $(document).ready(function(){
 
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"huzheyi"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
-
 
 
 
@@ -232,6 +147,5 @@ ga('send', 'pageview');
 </script>
 
 
-      </body>
-     </html>
-     
+    </body>
+   </html>
