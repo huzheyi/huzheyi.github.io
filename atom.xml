@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-01-24T14:17:02.019Z</updated>
+  <updated>2015-01-24T14:18:45.391Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://huzheyi.gq/2015/01/24/First-Post/"/>
     <id>http://huzheyi.gq/2015/01/24/First-Post/</id>
     <published>2015-01-23T16:39:30.000Z</published>
-    <updated>2015-01-24T14:13:24.000Z</updated>
-    <content type="html"><![CDATA[<p><strong>Hello World !</strong><br><a id="more"></a><br>感谢伟大的<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>！</p>
-<p>感谢伟大的<a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>！</p>
-<p>感谢伟大的<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a>!</p>
+    <updated>2015-01-24T14:18:41.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>Hello World !</strong><br><a id="more"></a><br>感谢伟大的<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a> ！</p>
+<p>感谢伟大的<a href="http://hexo.io" target="_blank" rel="external">Hexo</a> ！</p>
+<p>感谢伟大的<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a> !</p>
 <p>在这里开始我的博客，记录点滴。</p>
 ]]></content>
     <summary type="html">
