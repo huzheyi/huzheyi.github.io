@@ -87,6 +87,11 @@
 	<div class="article-content">
 		
 		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
+		</div>
+		
 		<p>时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，<a id="more"></a>Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>(<a href="https://github.com/Homebrew/homebrew" target="_blank" rel="external">Github</a>)。</p>
 <hr>
 <h2 id="Homebrew的安装">Homebrew的安装</h2>
@@ -192,11 +197,6 @@
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
-  </div>
-
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
@@ -292,8 +292,6 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
