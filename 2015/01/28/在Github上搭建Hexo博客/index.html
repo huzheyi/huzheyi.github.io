@@ -4,18 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog</title>
+    <title>huzheyi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="huzheyi">
     
-    <meta name="description" content="时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，">
+    <meta name="description" content="title: 在Github上搭建Hexo博客date: 2015-01-28 14:50:20categories: 技术相关
+tags:[Hexo, 博客]
+前言
+搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。
+空间
+免费、稳定、高速、无限流量、支持域">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="huzheyi" />
-    <meta name="twitter:title" content="Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog" />
+    <meta name="twitter:title" content="huzheyi&#39;s blog" />
       
     
     
@@ -72,15 +77,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/25/Homebrew-OS-X不可或缺的软件包管理工具/" title="Homebrew - OS X不可或缺的软件包管理工具" itemprop="url">Homebrew - OS X不可或缺的软件包管理工具</a>
+      <a href="/2015/01/28/在Github上搭建Hexo博客/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/109510142051195886912?rel=author" title="huzheyi" target="_blank" itemprop="author">huzheyi</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-01-24T16:42:06.000Z" itemprop="datePublished">Jan 25 2015</time>
-    Updated:<time datetime="2015-01-26T08:29:45.000Z" itemprop="dateModified">Jan 26 2015</time>
+    <time datetime="2015-01-28T07:57:15.000Z" itemprop="datePublished">Jan 28 2015</time>
+    Updated:<time datetime="2015-01-28T07:57:15.000Z" itemprop="dateModified">Jan 28 2015</time>
     
   </p>
 </header>
@@ -89,84 +94,82 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:[Hexo,_博客]"><span class="toc-number">1.</span> <span class="toc-text">tags:[Hexo, 博客]</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number"></span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#空间"><span class="toc-number"></span> <span class="toc-text">空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名"><span class="toc-number"></span> <span class="toc-text">域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#程序"><span class="toc-number"></span> <span class="toc-text">程序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo的优势"><span class="toc-number">1.</span> <span class="toc-text">Hexo的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo的部署"><span class="toc-number">2.</span> <span class="toc-text">Hexo的部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Github项目"><span class="toc-number">2.1.</span> <span class="toc-text">创建Github项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地安装Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">本地安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo的使用"><span class="toc-number">2.3.</span> <span class="toc-text">Hexo的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装主题"><span class="toc-number">2.4.</span> <span class="toc-text">安装主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写作"><span class="toc-number">2.5.</span> <span class="toc-text">写作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名绑定"><span class="toc-number">2.6.</span> <span class="toc-text">域名绑定</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-number"></span> <span class="toc-text">结语</span></a>
 		</div>
 		
-		<p>时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，<a id="more"></a>Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>(<a href="https://github.com/Homebrew/homebrew" target="_blank" rel="external">Github</a>)。</p>
-<hr>
-<h2 id="Homebrew的安装">Homebrew的安装</h2>
-<p>Homebrew的安装十分方便，仅需在终端窗口中输入一行命令：</p>
-<pre><code>ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
-</code></pre><h2 id="Homebrew的使用">Homebrew的使用</h2>
-<p>Homebrew的原则是“No Sudo”，即再也不需要Sudo来安装删除软件包了。下面是Homebrew的用法，十分简单(以wget为例)：</p>
+		<p>title: 在Github上搭建Hexo博客<br>date: 2015-01-28 14:50:20<br>categories: 技术相关</p>
+<h2 id="tags:[Hexo,_博客]">tags:[Hexo, 博客]</h2>
+<h1 id="前言">前言</h1>
+<p>搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。</p>
+<h1 id="空间">空间</h1>
+<p>免费、稳定、高速、无限流量、支持域名绑定，综合下来Github Pages服务无疑是最佳选择，为免费用户提供的300M空间，也足够个人博客使用了。</p>
+<h1 id="域名">域名</h1>
+<p>现在的顶级域名并不贵，而且各种后缀的个性域名也很多，这里不多阐释，只告诉大家有5个免费顶级域名：.tk, .cf, .ml, .ga, .gq。</p>
+<h1 id="程序">程序</h1>
+<p>一提到博客程序，就会想到Wordpress、Joomla、Drupal等。这些博客程序多采用动态页面技术开发，提供漂亮的外观与丰富的扩展，使用起来也非常方便。但这次的主角不是他们，而是<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>(<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Github</a>)!</p>
+<h2 id="Hexo的优势">Hexo的优势</h2>
+<ol>
+<li>静态页面：无需数据库，安全</li>
+<li>Node.js支撑：快速生成</li>
+<li>Markdown书写：优雅</li>
+</ol>
+<h2 id="Hexo的部署">Hexo的部署</h2>
+<h3 id="创建Github项目">创建Github项目</h3>
+<p>Github的注册过程就不表了，注册完之后，创建一个项目，就可以使用Github为我们提供的Github Pages服务。Github Pages服务有两种形态：第一种，针对用户的Pages；第二种，针对项目的Pages。无论选择哪种，都没有问题，区别在于：第一种，需要创建名为<code>用户名.github.io</code>的项目，并在其Master分支下提交页面；第二种，项目名任意，但需要在gh-pages分支下提交页面。</p>
+<h3 id="本地安装Hexo">本地安装Hexo</h3>
+<p>Hexo由Node.js开发，因而本地需要Node.js环境，Node.js环境的部署就不表了。安装Hexo，仅需要一行命令<code>npm install -g hexo</code>。然后在任何你喜欢的目录下创建一个文件夹，执行<code>hexo init</code>，Hexo就在本地搭建起来了。</p>
+<h3 id="Hexo的使用">Hexo的使用</h3>
+<p>Hexo的使用，同样非常简洁，只需记住几个命令即可。</p>
 <ul>
-<li><p>查找软件包</p>
-<p>  <code>brew search wget</code></p>
+<li><p>创建文章</p>
+<p><code>hexo n &quot;文章名&quot;</code> 或 <code>hexo new &quot;文章名&quot;</code></p>
 </li>
-<li><p>安装软件包</p>
-<p>  <code>brew install wget</code></p>
+<li><p>生成页面</p>
+<p><code>hexo g</code> 或 <code>hexo generate</code></p>
 </li>
-<li><p>列出已安装的软件包</p>
-<p>  <code>brew list</code></p>
+<li><p>部署到Github</p>
+<p><code>hexo d</code> 或 <code>hexo deploy</code></p>
 </li>
-<li><p>删除软件包</p>
-<p>  <code>brew remove wget</code></p>
+<li><p>启动本地HTTP Server</p>
+<p><code>hexo s</code> 或 <code>hexo server</code></p>
 </li>
-<li><p>查看软件包信息</p>
-<p>  <code>brew info wget</code></p>
-</li>
-<li><p>列出软件包的依赖关系</p>
-<p>  <code>brew deps wget</code></p>
-</li>
-<li><p>列出过时的软件包</p>
-<p>  <code>brew outdated</code></p>
-</li>
-<li><p>更新过时的指定软件包</p>
-<p>  <code>brew upgrade wget</code></p>
-</li>
-<li><p>更新过时的全部软件包</p>
-<p>  <code>brew upgrade</code></p>
+<li><p>清空已生成页面</p>
+<p><code>hexo clean</code></p>
 </li>
 </ul>
-<h2 id="Homebrew的更新">Homebrew的更新</h2>
-<p>Homebrew的更新，同样十分方便：</p>
-<p><code>brew update</code></p>
-<h2 id="自定义软件包管理">自定义软件包管理</h2>
-<p>如果需要的软件包不能再Homebrew找到，同时又想通过Homebrew来方便的管理，那么久可以使用Homebrew来自定义软件包。</p>
-<ol>
-<li><p>找到软件源码地址</p>
-<p> <code>http://xxx.com/source-1.0.tgz</code></p>
-</li>
-<li><p>建立自己的formula</p>
-<p> <code>brew create http://xxx.com/source-1.0.tgz</code><br> Homebrew自动建立的formula已包含<code>configure</code>和<code>make install</code>，一般不需要进行修改，退出编辑安装即可。</p>
-</li>
-<li><p>如果有需要编辑formula</p>
-<p> <code>brew edit source</code></p>
-</li>
-<li><p>安装自定义软件包</p>
-<p> <code>brew install souce</code></p>
-</li>
-</ol>
+<p>其中，对于经常要使用的生成页面然后部署的动作，可以简写为：</p>
+<p><code>hexo d -g</code></p>
+<h3 id="安装主题">安装主题</h3>
+<p>Hexo的默认主题非常简洁，对移动端的支持也很好，如果你觉得不好看，可以自己来修改。当然也有非常多的用户已将自己开发的主题共享出来，供大家使用。目前来看，应用较多的是一款名为<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">Pacman</a>的主题。</p>
+<p>安装同样很简单，在Hexo的目录下，执行<code>git clone https://github.com/A-limon/pacman.git</code>，然后在修改Hexo目录下的<code>_config.yml</code>文件中的<code>theme:</code>字段为<code>theme: pacman</code>，即可启用主题。</p>
+<p>主题预置了诸如多说、JiaThis、Google CSE、Google Analytics等功能，可以通过修改Hexo目录下<code>/themes/pacman/_config.yml</code>文件来启用或关闭，更多参数的功能也可以通过作者的主页发现。</p>
+<h3 id="写作">写作</h3>
+<p>在执行完<code>hexo n</code>的命令后，便会在<code>./source/_post/</code>目录下生成一个<code>.md</code>的文件，只要打开这个文件，便可以使用Markdown语法，优雅的写作了。当然在这个文件的头部，还有一些可以定义的属性，比较常用到的就是<code>tags</code>标签和<code>categories</code>标签了，顾名思义，就是文章的关键字和分类。多个标签或多级分类，采用如下方式：</p>
+<pre><code><span class="attribute">categories</span>: <span class="string">[aa, bb]  //后者为前者的子目录</span>
+
+<span class="vim"><span class="keyword">tag</span><span class="variable">s:</span> [<span class="keyword">cc</span>, dd]</span>
+</code></pre><p>或者：</p>
+<pre><code>categories:  //后者为前者的子目录
+-<span class="ruby"> aa
+</span>-<span class="ruby"> bb
+</span>
+tags:
+-<span class="ruby"> cc
+</span>-<span class="ruby"> dd</span>
+</code></pre><h3 id="域名绑定">域名绑定</h3>
+<p>Github Pages服务提供的域名绑定的功能，只需要在项目根目录下创建一个名为<code>CNAME</code>，内容为你的域名的文件，就可以了。当然别忘了在你的DNS中添加A记录，指向<code>192.30.252.153</code>或<code>192.30.252.154</code>。</p>
+<h1 id="结语">结语</h1>
+<p>至此，便可以优雅的开始你的博客之路了。如何“优雅”，请期待下一篇关于优雅的Markdown语法介绍！</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/包管理/">包管理</a><a href="/tags/OS-X/">OS X</a><a href="/tags/Homebrew/">Homebrew</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/技术相关/">技术相关</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://huzheyi.gq/2015/01/25/Homebrew-OS-X不可或缺的软件包管理工具/" data-title="Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
+  <div data-url="http://huzheyi.gq/2015/01/28/在Github上搭建Hexo博客/" data-title="huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
   </div>
 
 </div>
@@ -175,19 +178,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/28/在Github上搭建Hexo博客/" title="">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  (no title)</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/01/24/First-Post/"  title="First Post">
+<a href="/2015/01/25/Homebrew-OS-X不可或缺的软件包管理工具/"  title="Homebrew - OS X不可或缺的软件包管理工具">
  <strong>NEXT:</strong><br/> 
- <span>First Post
+ <span>Homebrew - OS X不可或缺的软件包管理工具
 </span>
 </a>
 </div>
