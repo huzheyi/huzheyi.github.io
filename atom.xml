@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-01-28T08:00:32.485Z</updated>
+  <updated>2015-01-31T15:33:00.084Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -15,13 +15,147 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[优雅地使用Markdown书写]]></title>
+    <link href="http://huzheyi.gq/2015/01/31/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8Markdown%E4%B9%A6%E5%86%99/"/>
+    <id>http://huzheyi.gq/2015/01/31/优雅地使用Markdown书写/</id>
+    <published>2015-01-31T14:13:58.000Z</published>
+    <updated>2015-01-31T15:32:44.000Z</updated>
+    <content type="html"><![CDATA[<p>Markdown是一种轻量级标记语言，创始人为John Gruber。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML或者HTML文档”。<a id="more"></a>当你熟悉了用这种语言书写后，你会发现，再也不用耗费大量时间去调整文档格式，令你专注于书写。完成文档的同时，也完成了排版，多么的优雅！现在就让我们一起了解一下Markdown的语法。</p>
+<hr>
+<h1 id="区块元素">区块元素</h1>
+<h2 id="标题">标题</h2>
+<p>Markdown支持两种标题语法，第一种可以支持两阶的标题，如下所示：</p>
+<pre><code><span class="header">标题1
+=======</span>
+
+<span class="header">标题2
+-------</span>
+</code></pre><p>第二种，可以支持最多六阶的标题：</p>
+<pre><code><span class="preprocessor"># 标题1</span>
+<span class="preprocessor">## 标题2</span>
+<span class="preprocessor">### 标题3</span>
+……
+<span class="preprocessor">###### 标题6</span>
+</code></pre><h2 id="区块引用">区块引用</h2>
+<p>区块引用使用<code>&gt;</code>来标记：</p>
+<pre><code><span class="input"><span class="prompt">&gt; 这里是引用文字。。。省略。。。
+&gt;</span> &gt; 二级引用。。。</span>
+<span class="input"><span class="prompt">&gt; &gt;</span> &gt; 三级引用。。。</span>
+</code></pre><p>引用可以嵌套，同时引用区块内还可以使用其他的Markdown语法，包括标题、列表、代码等。</p>
+<h2 id="列表">列表</h2>
+<p>Markdown支持有序列表和无序列表。<br>无序列表使用<code>*</code>、<code>+</code>、<code>-</code>三种符号作为标记：</p>
+<pre><code><span class="bullet">* </span>第一点
+<span class="bullet">* </span>第二点
+<span class="bullet">* </span>第三点
+</code></pre><p>有序列表直接使用数字加半角句点标记，而事实上，你并不需要自己排列序列，只要使用任意数字加句点都能生成正确的列表：</p>
+<pre><code><span class="bullet">1. </span>第一点
+<span class="bullet">2. </span>第二点
+<span class="bullet">3. </span>第三点
+</code></pre><p>如果列表项目需要包含多个段落，那么每个项目下的段落必须缩进4个空格或者1个制表符：</p>
+<pre><code><span class="bullet">1.    </span>这是项目包含两个段落。
+
+<span class="code">    就像这样。</span>
+
+<span class="bullet">2.    </span>项目2。
+</code></pre><p>如果列表项目内需要放进引用，那么<code>&gt;</code>就需要缩进。如果药房代码区块，该区块就需要缩进<strong>两次</strong>，也就是8个空格或者2个制表符：</p>
+<pre><code><span class="bullet">1.    </span>这是项目1
+
+<span class="code">    &gt;项目1包含的引用</span>
+
+<span class="code">        &lt;项目1包含的代码&gt;</span>
+
+<span class="bullet">2.    </span>项目2。
+</code></pre><p>当然，项目列表可能会不小心产生，这时候需要在数字和点中间加上<code>\</code>反斜杠转义。</p>
+<h1 id="代码区块">代码区块</h1>
+<p>Markdown中建立代码区块很简单，只要在段落开头缩进4个空格或者1个制表符就可以了。</p>
+<pre><code>段落1
+
+    <span class="tag">&lt;<span class="title">区块代码</span>&gt;</span>
+</code></pre><p>一个代码区块会一直持续到没有缩进的行。同时，代码区块中的Markdown语法不会被转换。</p>
+<h2 id="分隔线">分隔线</h2>
+<p>分隔线的写法十分随意，可以用三个以上的星号、减号、下划线等。</p>
+<pre><code><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+
+<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+
+- - - - - - -
+
+_______
+</code></pre><h1 id="区段元素">区段元素</h1>
+<h2 id="链接">链接</h2>
+<p>Markdown支持两种形式的链接语法：行内式和参考式。不管是哪一种，链接文字都是用方括号<code>[]</code>来标记。<br>要建立一个行内式链接，只要在方括号后面紧接着圆括号并插入网址链接即可，如果还想加上链接的title文字，只要在网址后面用双引号把title文字包起来即可，例如：</p>
+<pre><code>这是一个[<span class="link_label">链接</span>](<span class="link_url">http://huzheyi.gq "huzheyi's blog"</span>).
+</code></pre><p>参考式的链接则是在链接文字的方括号后面再接上一个方括号，里面填入用以辨识链接的标记，然后在文档的任意地方，定义这个标记：</p>
+<pre><code>这是一个[<span class="link_label">链接</span>][<span class="link_reference">id</span>].
+
+[<span class="link_reference">id</span>]:<span class="link_url"> http://huzheyi.gq "huzheyi's blog"</span>
+</code></pre><p>另外，Markdown支持以比较简短的自动链接形式来处理网址和邮箱，只要用尖括号包起来，Markdown就会将他们转换成链接：</p>
+<pre><code>&lt;<span class="symbol">http:</span>/<span class="regexp">/huzheyi.gq/</span>&gt;
+&lt;huzheyi<span class="variable">@huzheyi</span>.gq&gt;
+</code></pre><h2 id="强调">强调</h2>
+<p>Markdown使用星号和下划线来标记强调的字符。</p>
+<pre><code><span class="keyword">*</span> 斜体强调<span class="keyword">*</span>
+
+_ 斜体强调_
+
+<span class="keyword">*</span><span class="keyword">*</span> 粗体强调<span class="keyword">*</span><span class="keyword">*</span>
+
+__ 粗体强调__
+</code></pre><h2 id="代码">代码</h2>
+<p>如果要标记一小段的行内代码，只需要用反引号(<code>` </code>)把它包起来即可：</p>
+<pre><code>这里有一行代码要插入`<span class="built_in">printf</span>()`
+</code></pre><p>如果代码中本身就有<code>` </code>符号，那么就需要用多个反引号来开始和结束代码区段：</p>
+<pre><code><span class="escape">``</span>这是一行代码，其中包含了一个<span class="escape">`符</span>号<span class="escape">``</span>
+</code></pre><h2 id="图片">图片</h2>
+<p>Markdown使用和链接很相似的语法来标记图片，同样也允许两种样式：行内式和参考式。</p>
+<p>行内式的语法如下：</p>
+<pre><code>![<span class="link_label">替代文字</span>](<span class="link_url">/path/to/img.png</span>)
+![<span class="link_label">替代文字</span>](<span class="link_url">/path/to/img.png "title文字"</span>)
+</code></pre><p>参考式的语法如下：</p>
+<pre><code>![<span class="link_label">替代文字</span>][<span class="link_reference">id</span>]
+[<span class="link_reference">id</span>]:<span class="link_url"> /path/to/img.png "title文字"</span>
+</code></pre><p>不过，目前为止Markdown还没有办法指定图片的宽高。</p>
+<h1 id="其他">其他</h1>
+<h2 id="反斜杠">反斜杠</h2>
+<p>反斜杠即为转义符，可以利用它来插入一些在语法中有其他意义的符号，例如：</p>
+<pre><code>\    反斜杠
+`    反引号
+<span class="bullet">*    </span>星号
+_    下划线
+{}    花括号
+[]    方括号
+()    圆括号
+<span class="header">#    井号</span>
+<span class="bullet">+    </span>加号
+<span class="bullet">-    </span>减号
+.    半角句点
+!    感叹号
+</code></pre><p>只要在这些符号的前面插入反斜杠<code>\</code>，就可以避免这些字符被当成Markdown语法来翻译了。</p>
+<hr>
+<p>通过上面的介绍，相信你已经基本了解Markdown语法了，只要加以练习就可以非常熟练的使用了。<br>这里也顺带推荐两个Markdown的应用:</p>
+<ul>
+<li>Mac下的Markdown编辑器——<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a></li>
+<li>使用Markdown写邮件的浏览器插件——<a href="http://markdown-here.com/" target="_blank" rel="external">Markdown Here</a></li>
+</ul>
+<p>当你使用Markdown语法来编辑文档、书写邮件、发表博客时，你会觉得自己真的太优雅了！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Markdown是一种轻量级标记语言，创始人为John Gruber。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML或者HTML文档”。]]>
+    
+    </summary>
+    
+      <category term="Markdown" scheme="http://huzheyi.gq/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[在Github上搭建Hexo博客]]></title>
     <link href="http://huzheyi.gq/2015/01/28/%E5%9C%A8Github%E4%B8%8A%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/"/>
     <id>http://huzheyi.gq/2015/01/28/在Github上搭建Hexo博客/</id>
     <published>2015-01-28T06:50:20.000Z</published>
-    <updated>2015-01-28T08:00:28.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p>搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。<br><a id="more"></a></p>
+    <updated>2015-01-31T15:28:38.000Z</updated>
+    <content type="html"><![CDATA[<p>搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。<br><a id="more"></a></p>
+<hr>
 <h1 id="空间">空间</h1>
 <p>免费、稳定、高速、无限流量、支持域名绑定，综合下来Github Pages服务无疑是最佳选择，为免费用户提供的300M空间，也足够个人博客使用了。</p>
 <h1 id="域名">域名</h1>
@@ -79,12 +213,11 @@ tags:
 </span>-<span class="ruby"> dd</span>
 </code></pre><h3 id="域名绑定">域名绑定</h3>
 <p>Github Pages服务提供的域名绑定的功能，只需要在项目根目录下创建一个名为<code>CNAME</code>，内容为你的域名的文件，就可以了。当然别忘了在你的DNS中添加A记录，指向<code>192.30.252.153</code>或<code>192.30.252.154</code>。</p>
-<h1 id="结语">结语</h1>
+<hr>
 <p>至此，便可以优雅的开始你的博客之路了。如何“优雅”，请期待下一篇关于优雅的Markdown语法介绍！</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="前言">前言</h1>
-<p>搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。<br>]]>
+    <![CDATA[<p>搭建一个博客，无非就是要解决这三个问题：空间、域名、程序。那么这篇博文将带领大家逐一解决。<br>]]>
     
     </summary>
     
