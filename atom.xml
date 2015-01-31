@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-01-31T15:33:00.084Z</updated>
+  <updated>2015-01-31T15:34:35.782Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://huzheyi.gq/2015/01/31/%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8Markdown%E4%B9%A6%E5%86%99/"/>
     <id>http://huzheyi.gq/2015/01/31/优雅地使用Markdown书写/</id>
     <published>2015-01-31T14:13:58.000Z</published>
-    <updated>2015-01-31T15:32:44.000Z</updated>
+    <updated>2015-01-31T15:34:30.000Z</updated>
     <content type="html"><![CDATA[<p>Markdown是一种轻量级标记语言，创始人为John Gruber。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML或者HTML文档”。<a id="more"></a>当你熟悉了用这种语言书写后，你会发现，再也不用耗费大量时间去调整文档格式，令你专注于书写。完成文档的同时，也完成了排版，多么的优雅！现在就让我们一起了解一下Markdown的语法。</p>
 <hr>
 <h1 id="区块元素">区块元素</h1>
@@ -145,6 +145,8 @@ _    下划线
     </summary>
     
       <category term="Markdown" scheme="http://huzheyi.gq/tags/Markdown/"/>
+    
+      <category term="技术相关" scheme="http://huzheyi.gq/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
