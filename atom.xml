@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-02-12T04:17:22.013Z</updated>
+  <updated>2015-02-12T04:25:21.858Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://huzheyi.gq/2015/02/12/%E5%85%B3%E4%BA%8E%E5%BC%80%E6%BA%90%E9%9F%B3%E4%B9%90%E7%9A%84%E6%83%B3%E6%B3%95/"/>
     <id>http://huzheyi.gq/2015/02/12/关于开源音乐的想法/</id>
     <published>2015-02-12T02:45:03.000Z</published>
-    <updated>2015-02-12T04:17:17.000Z</updated>
+    <updated>2015-02-12T04:25:17.000Z</updated>
     <content type="html"><![CDATA[<h1 id="背景">背景</h1>
 <p>最近，互联网行业在中国是如此的火(pao)爆(mo)，以至于像我这样的半IT人士，也希望琢磨一些idea能在这波浪潮中玩儿一把。很多人提及的所谓“互联网思维”，或许我还没能很好的理解，但我想通过IT技术让传统行业发生一些改变或者革新，其实是完全可以尝试的。<a id="more"></a>尤其昨天看到V2EX上的一个帖子，有个哥们儿开发了一款白酒，一冲动就下单了两瓶，冲动过后也便催生了一个想法，Google之，似乎还是空白。</p>
 <p>不多卖关子，标题写的“开源音乐”，这正是我的想法。本人喜欢音乐，在声乐方面略有研究，曾参与过世界知名业余合唱团体，也曾尝试过创作。因而将“<strong>音乐</strong>”、“<strong>合作</strong>”、“<strong>网络</strong>”这三个元素综合在一起，我想做的正是音乐界的Github。</p>
@@ -62,7 +62,7 @@
 <li>音乐与代码不同，代码很客观，而音乐相对主观，如何共同维护一个“项目”？</li>
 <li>…………</li>
 </ol>
-<p>不过，设想一个场景，我写了一首民谣作品，你Fork过去改编成摇滚，他Fork过去改编成爵士，她Fork过去改编成中国风，最后成了电影主题曲……也是听美妙的。</p>
+<p>不过，设想一个场景，我写了一首民谣作品，你Fork过去改编成摇滚，他Fork过去改编成爵士，她Fork过去改编成中国风，最后成了电影主题曲……也是会醉的……</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="背景">背景</h1>
