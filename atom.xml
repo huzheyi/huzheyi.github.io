@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-02-12T04:25:21.858Z</updated>
+  <updated>2015-03-28T12:28:07.174Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -13,6 +13,121 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[[转]批量卸载Windows更新]]></title>
+    <link href="http://huzheyi.gq/2015/03/28/-%E8%BD%AC-%E6%89%B9%E9%87%8F%E5%8D%B8%E8%BD%BDWindows%E6%9B%B4%E6%96%B0/"/>
+    <id>http://huzheyi.gq/2015/03/28/-转-批量卸载Windows更新/</id>
+    <published>2015-03-28T12:03:45.000Z</published>
+    <updated>2015-03-28T12:27:53.000Z</updated>
+    <content type="html"><![CDATA[<p>最近发现虚拟机里的Windows 8.1体积日益增大，而我除了在里面写写PPT和DOC基本不干别的事儿。估计是系统自动更新安装了一大堆的补丁。在系统里补丁只能一个一个卸载，于是就Google到以下这段脚本，用来批量卸载补丁。感谢原作者。<a id="more"></a></p>
+<hr>
+<p>直接贴出脚本：</p>
+<pre><code><span class="variable">$KBID</span> = <span class="string">"KB958488"</span> 
+<span class="variable">$KBID1</span> = <span class="string">"KB976902"</span>
+cls
+function Remove-Update {
+
+    <span class="variable">$HotFixes</span> = Get-HotFix
+    [<span class="keyword">int</span>]<span class="variable">$count</span> = <span class="number">0</span>;
+    <span class="keyword">foreach</span> (<span class="variable">$HotFix</span> in <span class="variable">$HotFixes</span>) 
+    {
+          <span class="variable">$count</span> = <span class="variable">$count</span> + <span class="number">1</span>
+        Write-Host <span class="variable">$count</span> / <span class="variable">$HotFixes</span>.Count
+        <span class="keyword">if</span> ((<span class="variable">$KBID</span> -<span class="keyword">ne</span> <span class="variable">$HotFix</span>.HotfixId) -<span class="keyword">and</span> (<span class="variable">$KBID1</span> -<span class="keyword">ne</span> <span class="variable">$HotFix</span>.HotfixId)) 
+        { 
+            <span class="string">"Inside first if"</span> 
+            <span class="variable">$KBID</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+            <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBID</span> /quiet /norestart"</span> 
+            Write-Host <span class="string">"Removing <span class="variable">$KBID</span> from the target."</span> 
+            Invoke-Expression <span class="variable">$RemovalCommand</span> 
+        } 
+
+        (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
+        { 
+            <span class="variable">$KBNumber</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+            <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBNumber</span> /quiet /norestart"</span> 
+            Write-Host <span class="string">"Removing update <span class="variable">$KBNumber</span> from the target."</span> 
+            Invoke-Expression <span class="variable">$RemovalCommand</span>   
+        } 
+
+        <span class="keyword">if</span> (<span class="variable">$KBID</span> -match <span class="string">"Security"</span>) 
+        { 
+            <span class="keyword">if</span> (<span class="variable">$HotFix</span>.Description -match <span class="string">"Security"</span>) 
+            { 
+
+                <span class="variable">$KBSecurity</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+                <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBSecurity</span> /quiet /norestart"</span> 
+                Write-Host <span class="string">"Removing Security Update <span class="variable">$KBSecurity</span> from the target."</span> 
+                Invoke-Expression <span class="variable">$RemovalCommand</span> 
+            } 
+        } 
+
+
+        <span class="keyword">while</span> (<span class="variable">@(</span>Get-Process wusa -ErrorAction SilentlyContinue).Count -<span class="keyword">ne</span> <span class="number">0</span>) 
+        { 
+            Start-Sleep <span class="number">3</span> 
+            Write-Host <span class="string">"Waiting for update removal to finish ..."</span> 
+        } 
+    }
+
+}
+
+Remove-Update
+</code></pre><p>这段代码只需另存为ps1文件以管理员方式在PowerShell里执行即可。<br>不过执行前还需要注意修改以下PowerShell的策略，即输入如下命令：</p>
+<pre><code><span class="keyword">Set</span>-ExecutionPolicy <span class="comment">RemoteSigned </span>
+</code></pre><hr>
+<p>补充知识：</p>
+<blockquote>
+<h3 id="Windows_PowerShell_执行策略如下：">Windows PowerShell 执行策略如下：</h3>
+<p><strong>Restricted</strong></p>
+<ul>
+<li>默认执行策略。</li>
+<li>允许单个命令运行，但不能运行脚本。</li>
+<li>阻止所有脚本文件的运行，包括格式和配置文件 (.ps1xml)、模块脚本文件 (.psm1)和 Windows PowerShell 配置文件 (.ps1)。</li>
+</ul>
+<p><strong>AllSigned</strong></p>
+<ul>
+<li>可以运行脚本。</li>
+<li>要求所有脚本和配置文件由可信发布者签名，包括在本地计算机上编写的脚本。</li>
+<li>在运行来自尚未分类为可信或不可信发布者的脚本之前进行提示。</li>
+<li>运行来自 Internet 以外的源的未签名脚本及已签名但有恶意的脚本存在风险。</li>
+</ul>
+<p><strong>RemoteSigned</strong></p>
+<ul>
+<li>可以运行脚本。</li>
+<li>要求可信发布者对从 Internet（包括电子邮件和即时消息程序）下载的脚本和配置文件进行数字签名。</li>
+<li>不要求对已经运行和已在本地计算机编写的脚本（不是从 Internet 下载的脚本）进行数字签名。</li>
+<li>面临运行已签名但有恶意的脚本带来的风险。</li>
+</ul>
+<p><strong>Unrestricted</strong></p>
+<ul>
+<li>可以运行未签名脚本。（面临运行恶意脚本所带来的风险。）</li>
+<li>在运行从 Internet 下载的脚本和配置文件之前警告用户。</li>
+</ul>
+<p><strong>Bypass</strong></p>
+<ul>
+<li>不阻止任何执行项，不显示警告和提示。</li>
+<li>此执行策略设计用于两种配置：一种是 Windows PowerShell 脚本内置于一个较大的应用程序中；一种是 Windows PowerShell 成为拥有自身安全模型的某个程序的基础。</li>
+</ul>
+<p><strong>Undefined</strong></p>
+<ul>
+<li>当前作用域中未设置执行策略。</li>
+<li>如果所有作用域中的执行策略为 Undefined，则有效执行策略为 Restricted，该策略是默认执行策略。</li>
+</ul>
+<p>注意：在不对通用命名约定 (UNC) 路径与 Internet 路径加以区分的系统上，可能无法使用RemoteSigned 执行策略来允许运行由 UNC 路径标识的脚本。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近发现虚拟机里的Windows 8.1体积日益增大，而我除了在里面写写PPT和DOC基本不干别的事儿。估计是系统自动更新安装了一大堆的补丁。在系统里补丁只能一个一个卸载，于是就Google到以下这段脚本，用来批量卸载补丁。感谢原作者。]]>
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://huzheyi.gq/tags/Windows/"/>
+    
+      <category term="技术相关" scheme="http://huzheyi.gq/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[关于开源音乐的想法]]></title>

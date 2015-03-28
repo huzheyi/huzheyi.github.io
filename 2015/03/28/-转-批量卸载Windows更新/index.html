@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog</title>
+    <title>[转]批量卸载Windows更新 | huzheyi&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="huzheyi">
     
-    <meta name="description" content="时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，">
+    <meta name="description" content="最近发现虚拟机里的Windows 8.1体积日益增大，而我除了在里面写写PPT和DOC基本不干别的事儿。估计是系统自动更新安装了一大堆的补丁。在系统里补丁只能一个一个卸载，于是就Google到以下这段脚本，用来批量卸载补丁。感谢原作者。">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="huzheyi" />
-    <meta name="twitter:title" content="Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog" />
+    <meta name="twitter:title" content="[转]批量卸载Windows更新 | huzheyi&#39;s blog" />
       
     
     
@@ -72,15 +72,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/25/Homebrew-OS-X不可或缺的软件包管理工具/" title="Homebrew - OS X不可或缺的软件包管理工具" itemprop="url">Homebrew - OS X不可或缺的软件包管理工具</a>
+      <a href="/2015/03/28/-转-批量卸载Windows更新/" title="[转]批量卸载Windows更新" itemprop="url">[转]批量卸载Windows更新</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://plus.google.com/109510142051195886912?rel=author" title="huzheyi" target="_blank" itemprop="author">huzheyi</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-01-24T16:42:06.000Z" itemprop="datePublished">Jan 25 2015</time>
-    Updated:<time datetime="2015-01-26T08:29:45.000Z" itemprop="dateModified">Jan 26 2015</time>
+    <time datetime="2015-03-28T12:03:45.000Z" itemprop="datePublished">Mar 28 2015</time>
+    Updated:<time datetime="2015-03-28T12:27:53.000Z" itemprop="dateModified">Mar 28 2015</time>
     
   </p>
 </header>
@@ -89,71 +89,113 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的安装"><span class="toc-number">1.</span> <span class="toc-text">Homebrew的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的使用"><span class="toc-number">2.</span> <span class="toc-text">Homebrew的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Homebrew的更新"><span class="toc-number">3.</span> <span class="toc-text">Homebrew的更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义软件包管理"><span class="toc-number">4.</span> <span class="toc-text">自定义软件包管理</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows_PowerShell_执行策略如下："><span class="toc-number">1.</span> <span class="toc-text">Windows PowerShell 执行策略如下：</span></a></li></ol>
 		</div>
 		
-		<p>时下，Linux类操作系统都有软件包管理工具，例如：RHEL/Centos的yum，Debian/Ubuntu的apt，Arch的pacman等，用来安装、卸载、更新软件包十分方便。如今，<a id="more"></a>Mac OS X下除了官方的App Store，也拥有了一个强大的软件包管理工具——<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a>(<a href="https://github.com/Homebrew/homebrew" target="_blank" rel="external">Github</a>)。</p>
+		<p>最近发现虚拟机里的Windows 8.1体积日益增大，而我除了在里面写写PPT和DOC基本不干别的事儿。估计是系统自动更新安装了一大堆的补丁。在系统里补丁只能一个一个卸载，于是就Google到以下这段脚本，用来批量卸载补丁。感谢原作者。<a id="more"></a></p>
 <hr>
-<h2 id="Homebrew的安装">Homebrew的安装</h2>
-<p>Homebrew的安装十分方便，仅需在终端窗口中输入一行命令：</p>
-<pre><code>ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
-</code></pre><h2 id="Homebrew的使用">Homebrew的使用</h2>
-<p>Homebrew的原则是“No Sudo”，即再也不需要Sudo来安装删除软件包了。下面是Homebrew的用法，十分简单(以wget为例)：</p>
+<p>直接贴出脚本：</p>
+<pre><code><span class="variable">$KBID</span> = <span class="string">"KB958488"</span> 
+<span class="variable">$KBID1</span> = <span class="string">"KB976902"</span>
+cls
+function Remove-Update {
+
+    <span class="variable">$HotFixes</span> = Get-HotFix
+    [<span class="keyword">int</span>]<span class="variable">$count</span> = <span class="number">0</span>;
+    <span class="keyword">foreach</span> (<span class="variable">$HotFix</span> in <span class="variable">$HotFixes</span>) 
+    {
+          <span class="variable">$count</span> = <span class="variable">$count</span> + <span class="number">1</span>
+        Write-Host <span class="variable">$count</span> / <span class="variable">$HotFixes</span>.Count
+        <span class="keyword">if</span> ((<span class="variable">$KBID</span> -<span class="keyword">ne</span> <span class="variable">$HotFix</span>.HotfixId) -<span class="keyword">and</span> (<span class="variable">$KBID1</span> -<span class="keyword">ne</span> <span class="variable">$HotFix</span>.HotfixId)) 
+        { 
+            <span class="string">"Inside first if"</span> 
+            <span class="variable">$KBID</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+            <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBID</span> /quiet /norestart"</span> 
+            Write-Host <span class="string">"Removing <span class="variable">$KBID</span> from the target."</span> 
+            Invoke-Expression <span class="variable">$RemovalCommand</span> 
+        } 
+
+        (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
+        { 
+            <span class="variable">$KBNumber</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+            <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBNumber</span> /quiet /norestart"</span> 
+            Write-Host <span class="string">"Removing update <span class="variable">$KBNumber</span> from the target."</span> 
+            Invoke-Expression <span class="variable">$RemovalCommand</span>   
+        } 
+
+        <span class="keyword">if</span> (<span class="variable">$KBID</span> -match <span class="string">"Security"</span>) 
+        { 
+            <span class="keyword">if</span> (<span class="variable">$HotFix</span>.Description -match <span class="string">"Security"</span>) 
+            { 
+
+                <span class="variable">$KBSecurity</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
+                <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBSecurity</span> /quiet /norestart"</span> 
+                Write-Host <span class="string">"Removing Security Update <span class="variable">$KBSecurity</span> from the target."</span> 
+                Invoke-Expression <span class="variable">$RemovalCommand</span> 
+            } 
+        } 
+
+
+        <span class="keyword">while</span> (<span class="variable">@(</span>Get-Process wusa -ErrorAction SilentlyContinue).Count -<span class="keyword">ne</span> <span class="number">0</span>) 
+        { 
+            Start-Sleep <span class="number">3</span> 
+            Write-Host <span class="string">"Waiting for update removal to finish ..."</span> 
+        } 
+    }
+
+}
+
+Remove-Update
+</code></pre><p>这段代码只需另存为ps1文件以管理员方式在PowerShell里执行即可。<br>不过执行前还需要注意修改以下PowerShell的策略，即输入如下命令：</p>
+<pre><code><span class="keyword">Set</span>-ExecutionPolicy <span class="comment">RemoteSigned </span>
+</code></pre><hr>
+<p>补充知识：</p>
+<blockquote>
+<h3 id="Windows_PowerShell_执行策略如下：">Windows PowerShell 执行策略如下：</h3>
+<p><strong>Restricted</strong></p>
 <ul>
-<li><p>查找软件包</p>
-<p>  <code>brew search wget</code></p>
-</li>
-<li><p>安装软件包</p>
-<p>  <code>brew install wget</code></p>
-</li>
-<li><p>列出已安装的软件包</p>
-<p>  <code>brew list</code></p>
-</li>
-<li><p>删除软件包</p>
-<p>  <code>brew remove wget</code></p>
-</li>
-<li><p>查看软件包信息</p>
-<p>  <code>brew info wget</code></p>
-</li>
-<li><p>列出软件包的依赖关系</p>
-<p>  <code>brew deps wget</code></p>
-</li>
-<li><p>列出过时的软件包</p>
-<p>  <code>brew outdated</code></p>
-</li>
-<li><p>更新过时的指定软件包</p>
-<p>  <code>brew upgrade wget</code></p>
-</li>
-<li><p>更新过时的全部软件包</p>
-<p>  <code>brew upgrade</code></p>
-</li>
+<li>默认执行策略。</li>
+<li>允许单个命令运行，但不能运行脚本。</li>
+<li>阻止所有脚本文件的运行，包括格式和配置文件 (.ps1xml)、模块脚本文件 (.psm1)和 Windows PowerShell 配置文件 (.ps1)。</li>
 </ul>
-<h2 id="Homebrew的更新">Homebrew的更新</h2>
-<p>Homebrew的更新，同样十分方便：</p>
-<p><code>brew update</code></p>
-<h2 id="自定义软件包管理">自定义软件包管理</h2>
-<p>如果需要的软件包不能再Homebrew找到，同时又想通过Homebrew来方便的管理，那么久可以使用Homebrew来自定义软件包。</p>
-<ol>
-<li><p>找到软件源码地址</p>
-<p> <code>http://xxx.com/source-1.0.tgz</code></p>
-</li>
-<li><p>建立自己的formula</p>
-<p> <code>brew create http://xxx.com/source-1.0.tgz</code><br> Homebrew自动建立的formula已包含<code>configure</code>和<code>make install</code>，一般不需要进行修改，退出编辑安装即可。</p>
-</li>
-<li><p>如果有需要编辑formula</p>
-<p> <code>brew edit source</code></p>
-</li>
-<li><p>安装自定义软件包</p>
-<p> <code>brew install souce</code></p>
-</li>
-</ol>
+<p><strong>AllSigned</strong></p>
+<ul>
+<li>可以运行脚本。</li>
+<li>要求所有脚本和配置文件由可信发布者签名，包括在本地计算机上编写的脚本。</li>
+<li>在运行来自尚未分类为可信或不可信发布者的脚本之前进行提示。</li>
+<li>运行来自 Internet 以外的源的未签名脚本及已签名但有恶意的脚本存在风险。</li>
+</ul>
+<p><strong>RemoteSigned</strong></p>
+<ul>
+<li>可以运行脚本。</li>
+<li>要求可信发布者对从 Internet（包括电子邮件和即时消息程序）下载的脚本和配置文件进行数字签名。</li>
+<li>不要求对已经运行和已在本地计算机编写的脚本（不是从 Internet 下载的脚本）进行数字签名。</li>
+<li>面临运行已签名但有恶意的脚本带来的风险。</li>
+</ul>
+<p><strong>Unrestricted</strong></p>
+<ul>
+<li>可以运行未签名脚本。（面临运行恶意脚本所带来的风险。）</li>
+<li>在运行从 Internet 下载的脚本和配置文件之前警告用户。</li>
+</ul>
+<p><strong>Bypass</strong></p>
+<ul>
+<li>不阻止任何执行项，不显示警告和提示。</li>
+<li>此执行策略设计用于两种配置：一种是 Windows PowerShell 脚本内置于一个较大的应用程序中；一种是 Windows PowerShell 成为拥有自身安全模型的某个程序的基础。</li>
+</ul>
+<p><strong>Undefined</strong></p>
+<ul>
+<li>当前作用域中未设置执行策略。</li>
+<li>如果所有作用域中的执行策略为 Undefined，则有效执行策略为 Restricted，该策略是默认执行策略。</li>
+</ul>
+<p>注意：在不对通用命名约定 (UNC) 路径与 Internet 路径加以区分的系统上，可能无法使用RemoteSigned 执行策略来允许运行由 UNC 路径标识的脚本。</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/包管理/">包管理</a><a href="/tags/OS-X/">OS X</a><a href="/tags/Homebrew/">Homebrew</a>
+  <span></span> <a href="/tags/Windows/">Windows</a>
   </div>
 
 
@@ -166,7 +208,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://huzheyi.gq/2015/01/25/Homebrew-OS-X不可或缺的软件包管理工具/" data-title="Homebrew - OS X不可或缺的软件包管理工具 | huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
+  <div data-url="http://huzheyi.gq/2015/03/28/-转-批量卸载Windows更新/" data-title="[转]批量卸载Windows更新 | huzheyi&#39;s blog" data-tsina="2098978053" class="share clearfix">
   </div>
 
 </div>
@@ -175,19 +217,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/28/在Github上搭建Hexo博客/" title="在Github上搭建Hexo博客">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  在Github上搭建Hexo博客</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/01/24/First-Post/"  title="First Post">
+<a href="/2015/02/12/关于开源音乐的想法/"  title="关于开源音乐的想法">
  <strong>NEXT:</strong><br/> 
- <span>First Post
+ <span>关于开源音乐的想法
 </span>
 </a>
 </div>
