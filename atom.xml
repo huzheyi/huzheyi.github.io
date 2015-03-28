@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Blog Beauty of My Life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://huzheyi.gq/"/>
-  <updated>2015-03-28T12:28:07.174Z</updated>
+  <updated>2015-03-28T18:49:17.128Z</updated>
   <id>http://huzheyi.gq/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://huzheyi.gq/2015/03/28/-%E8%BD%AC-%E6%89%B9%E9%87%8F%E5%8D%B8%E8%BD%BDWindows%E6%9B%B4%E6%96%B0/"/>
     <id>http://huzheyi.gq/2015/03/28/-转-批量卸载Windows更新/</id>
     <published>2015-03-28T12:03:45.000Z</published>
-    <updated>2015-03-28T12:27:53.000Z</updated>
+    <updated>2015-03-28T18:48:56.000Z</updated>
     <content type="html"><![CDATA[<p>最近发现虚拟机里的Windows 8.1体积日益增大，而我除了在里面写写PPT和DOC基本不干别的事儿。估计是系统自动更新安装了一大堆的补丁。在系统里补丁只能一个一个卸载，于是就Google到以下这段脚本，用来批量卸载补丁。感谢原作者。<a id="more"></a></p>
 <hr>
 <p>直接贴出脚本：</p>
@@ -43,7 +43,7 @@ function Remove-Update {
             Invoke-Expression <span class="variable">$RemovalCommand</span> 
         } 
 
-        (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
+        <span class="keyword">if</span> (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
         { 
             <span class="variable">$KBNumber</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
             <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBNumber</span> /quiet /norestart"</span> 

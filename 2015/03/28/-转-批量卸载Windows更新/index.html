@@ -80,7 +80,7 @@
     </p>
   <p class="article-time">
     <time datetime="2015-03-28T12:03:45.000Z" itemprop="datePublished">Mar 28 2015</time>
-    Updated:<time datetime="2015-03-28T12:27:53.000Z" itemprop="dateModified">Mar 28 2015</time>
+    Updated:<time datetime="2015-03-28T18:48:56.000Z" itemprop="dateModified">Mar 29 2015</time>
     
   </p>
 </header>
@@ -115,7 +115,7 @@ function Remove-Update {
             Invoke-Expression <span class="variable">$RemovalCommand</span> 
         } 
 
-        (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
+        <span class="keyword">if</span> (<span class="variable">$KBID</span> -match <span class="string">"All"</span>) 
         { 
             <span class="variable">$KBNumber</span> = <span class="variable">$HotFix</span>.HotfixId.Replace(<span class="string">"KB"</span>, <span class="string">""</span>) 
             <span class="variable">$RemovalCommand</span> = <span class="string">"wusa.exe /uninstall /kb:<span class="variable">$KBNumber</span> /quiet /norestart"</span> 
